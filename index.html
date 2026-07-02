@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
+<!-- saved from url=(0246)https://p26-flow-sign.byteimg.com/tos-cn-i-ik7evvg4ik/rc/pc/super_tool/78755f292b0e409da7186126ea988711.html?lk3s=8e244e95&rcl=20260702112632F17E12B190517FACF116&rrcfp=cb23d0ed&x-expires=1783567676&x-signature=HxiaHUuj8toM%2FFfSrzl%2FP2rQF%2Bo%3D -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>正多边形周长比直径计算器</title>
     <style>
@@ -155,7 +155,7 @@
         <label for="sideInput">输入边数(≥3)：</label>
         <input type="number" id="sideInput" min="3" value="4">
         <button id="drawBtn">绘制计算</button>
-        <div class="error-tip" id="errorTip">请输入≥3的正整数！</div>
+        <div class="error-tip" id="errorTip" style="display: none;">请输入≥3的正整数！</div>
     </div>
 
     <div class="main-content">
@@ -225,8 +225,10 @@
         }
 
         drawBtn.onclick = run;
-        sideInput.onkeydown = e=>e.key==='Enter'&&run();
+        sideInput.addEventListener('keydown', e => {
+            if(e.key === 'Enter') run();
+        });
         window.onload = run;
     </script>
-</body>
-</html>
+
+</body></html>
